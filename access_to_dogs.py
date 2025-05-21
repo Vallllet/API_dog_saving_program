@@ -58,6 +58,7 @@ class YD:
         self.base_url = 'https://cloud-api.yandex.net/v1/disk/resources'
 
     def create_folder(self):
+        creation_zero = requests.put(f'{self.base_url}?path=dogs', headers=self.headers)
         creation = requests.put(f'{self.base_url}?path=dogs/{dog1.breed}', headers=self.headers)
         trying = creation.status_code
         if trying == 401:
